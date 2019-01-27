@@ -443,6 +443,17 @@ config TOUCHSCREEN_MAX11801
 	  To compile this driver as a module, choose M here: the
 	  module will be called max11801_ts.
 
+config TOUCHSCREEN_CLICKTOUCH
+       tristate "ClickTouch touchscreens"
+       depends on I2C
+       help
+         Say Y here if you have a ClickTouch touchscreen.
+
+         If unsure, say N.
+
+         To compile this driver as a module, choose M here: the
+         module will be called clicktouch_ts.
+
 config TOUCHSCREEN_MCS5000
 	tristate "MELFAS MCS-5000 touchscreen"
 	depends on I2C

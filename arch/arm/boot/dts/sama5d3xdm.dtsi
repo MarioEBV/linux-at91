@@ -10,14 +10,14 @@
 / {
 	ahb {
 		apb {
-			i2c1: i2c@f0018000 {
-				qt1070: keyboard@1b {
-					compatible = "qt1070";
-					reg = <0x1b>;
+			i2c0: i2c@f0014000 {
+				clicktouch_ts: keyboard@1f {
+					compatible = "clicktouch_ts";
+					reg = <0x1f>;
 					interrupt-parent = <&pioE>;
 					interrupts = <31 0x0>;
 					pinctrl-names = "default";
-					pinctrl-0 = <&pinctrl_qt1070_irq>;
+					pinctrl-0 = <&pinctrl_clicktouch_ts_irq>;
 					wakeup-source;
 				};
 			};
@@ -46,7 +46,7 @@
 
 			pinctrl@fffff200 {
 				board {
-					pinctrl_qt1070_irq: qt1070_irq {
+					pinctrl_clicktouch_ts_irq: clicktouch_ts_irq {
 						atmel,pins =
 							<AT91_PIOE 31 AT91_PERIPH_GPIO AT91_PINCTRL_PULL_UP_DEGLITCH>; /* PE31 GPIO with pull up deglith */
 					};
